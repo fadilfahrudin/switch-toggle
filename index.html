@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Switch Dark Mode</title>
+</head>
+
+<body>
+    <h2>Switch Color</h2>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+</body>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let body = document.getElementsByTagName("body")[0]
+        let input = document.querySelector("input")
+        input.addEventListener("click", () => {
+            let checked = input.getAttribute("checked")
+            checked ? input.removeAttribute("checked") : input.setAttribute("checked", true)
+            if (input.hasAttribute("checked")) {
+                body.setAttribute("class", "dark-mode")
+            } else {
+                body.removeAttribute("class")
+            }
+        })
+    })
+</script>
+
+</html>
